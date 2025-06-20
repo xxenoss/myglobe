@@ -12,6 +12,7 @@ const UserSchema = new mongoose.Schema({
   plan: { type: String, default: 'Free' },
 });
 
+
 const User = mongoose.models.User || mongoose.model('User', UserSchema);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

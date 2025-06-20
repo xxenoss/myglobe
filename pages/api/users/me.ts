@@ -27,6 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const token = auth.split(' ')[1];
 
+  
   try {
     await dbConnect();
     const decoded: any = verifyToken(token);

@@ -11,6 +11,7 @@ const UserSchema = new mongoose.Schema({
   stripeCustomerId: String,
 });
 
+
 const User = mongoose.models.User || mongoose.model('User', UserSchema);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
