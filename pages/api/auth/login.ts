@@ -12,14 +12,17 @@ const UserSchema = new mongoose.Schema({
   plan: { type: String, default: 'Free' }
 });
 
-
 const User = mongoose.models.User || mongoose.model('User', UserSchema);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  // Enable CORS
   await Cors(req, res, {
+    origin: [
+      'https://my-globe.online',
+      'https://myglobe.vercel.app',
+      'https://myglobe-git-main-xxenoss47-5347s-projects.vercel.app',
+      'https://myglobe-nnjvn9knr-xxenoss47-5347s-projects.vercel.app',
+    ],
     methods: ['POST', 'OPTIONS'],
-    origin: '*', // replace with your frontend domain or '*' for testing
     optionsSuccessStatus: 200,
   });
 
